@@ -77,16 +77,71 @@ const ResultText = styled.div`
   white-space: pre-wrap;
   font-size: 1.3rem;
   background-color: #fff;
-  border: 2px solid #ddd;
+  border: 2px solid #3498db;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
+
+  h2 {
+    color: #3498db;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    strong {
+      color: #333;
+    }
+  }
+
+  input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #555;
+
+    &:focus {
+      outline: none;
+      border-color: #2980b9;
+      box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+    }
+  }
+
+  button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #2980b9;
+    }
+
+    & + button {
+      margin-left: 10px;
+    }
+  }
 `;
+
 const ErrorText = styled.p`
   color: red;
 `;
-
 function App() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [textResult, setTextResult] = useState("");
